@@ -1,0 +1,78 @@
+Jarvis Miller
+jarvm
+
+Top 20 bigrams along with their chi-square statistic (note that 20+ are tied. Not sure if Counter.most_common(n) outputs n results randomly if they all share the same value/score. So results may be slightly different
+
+((u'INTERBANK', u'OFFERED'), 78051.99991992518)
+((u'1969', u'equaling'), 78051.99991992518)
+((u'Houston', u'Lighting'), 78051.99991992518)
+((u'LATE', u'EURODOLLARS'), 78051.99991992518)
+((u'CERTIFICATES', u'OF'), 78051.99991992518)
+((u'pro', u'bono'), 78051.99991992518)
+((u'Unification', u'Church'), 78051.99991992518)
+((u'Saturday', u'Night'), 78051.99991992518)
+((u'instruments', u'typically'), 78051.99991992518)
+((u'Carol', u'Cable'), 78051.99991992518)
+((u'HOME', u'LOAN'), 78051.99991992518)
+((u'Arthur', u'Andersen'), 78051.99991992518)
+((u'LYNCH', u'READY'), 78051.99991992518)
+((u'OF', u'DEPOSIT'), 78051.99991992518)
+((u'High-grade', u'unsecured'), 78051.99991992518)
+((u'Zoete', u'Wedd'), 78051.99991992518)
+((u'negotiable', u'C.D.s'), 78051.99991992518)
+((u'Ocean', u'Drilling'), 78051.99991992518)
+((u'Nippon', u'Kangyo'), 78051.99991992518)
+((u'Hells', u'Angels'), 78051.99991992518)
+
+
+
+Top 20 bigrams along with their PMI scores:
+[(('Zoete', 'Wedd'), -1.6094379124341003), 
+(('Fulton', 'Prebon'), -1.6094379124341003),
+(('BANKERS', 'ACCEPTANCES'), -1.6094379124341003), 
+(('LATE', 'EURODOLLARS'), -1.6094379124341003), 
+(('INTERBANK', 'OFFERED'), -1.6094379124341003), 
+(('TREASURY', 'BILLS'), -1.6094379124341003), 
+(('MERRILL', 'LYNCH'), -1.6094379124341003), 
+(('LYNCH', 'READY'), -1.6094379124341003), 
+(('READY', 'ASSETS'), -1.6094379124341003), 
+(('ASSETS', 'TRUST'), -1.6094379124341003), 
+(('Wastewater', 'Treatment'), -1.6094379124341003), 
+(('Bare-Faced', 'Messiah'), -1.791759469228055), 
+(('CALL', 'MONEY'), -1.791759469228055), 
+(('CERTIFICATES', 'OF'), -1.791759469228055), 
+(('OF', 'DEPOSIT'), -1.791759469228055), 
+(('HOME', 'LOAN'), -1.791759469228055), 
+(('Hang', 'Seng'), -1.791759469228055), 
+(('Deb', 'Shops'), -1.791759469228055), 
+(('Easy', 'Eggs'), -1.791759469228055), 
+(('Aga', 'Khan'), -1.791759469228055)]
+
+Discussion:
+
+For the chi-square, I also decided to increase Oij by 1 for each bigram. This is because there might be some words that only appear together, such as an eccentric company name like "Soylent rulezzz". The words "Soylent" and "rulezzz" might not appear with any other word, making the off diagonals of the table equal to 0. 
+
+Top 20 bigrams along with their Chi-square statistic:
+(('Wall', 'Street'), 77482.21683640165), 
+(('Hong', 'Kong'), 77038.31844447255), 
+(('real', 'estate'), 76982.77723725597), 
+(('Merrill', 'Lynch'), 76682.65609670986), 
+(('Navigation', 'Mixte'), 76278.0845861797), 
+(('S&P', '500'), 76050.66168895707), 
+(('Lehman', 'Hutton'), 75997.99527211185), 
+(('Sea', 'Containers'), 75534.19038986806), 
+(('Control', 'Data'), 75264.4259893961), 
+(('Du', 'Pont'), 75049.9977702567), 
+(('Dow', 'Jones'), 74769.83802020812), 
+(('Hurricane', 'Hugo'), 74504.18021612683), 
+(('Georgia', 'Gulf'), 74504.18021612683), 
+(('p.m.', 'EST'), 74335.2366340851), 
+(('grand', 'jury'), 74335.2366340851), 
+(('Waertsilae', 'Marine'), 74335.2366340851), 
+(('Great', 'Northern'), 74149.39867334031), 
+(('St.', 'Louis'), 73943.9988014245), 
+(('Drexel', 'Burnham'), 73943.9988014245), 
+(('Burnham', 'Lambert'), 73943.9988014245)
+
+
+I think the chi-square statistic gives better results. Chi square method definitely shows more words that I think wouldnt be paired with other words, e.g. names of people or companies in comparison to use the PMI method. I think it is also more flexible, as seen in when I increased Oij by one and got different results (this actually can be a pro and a con, but I see it more as a pro in this case as this is mostly exploratory work). This shows that I can try to control for rare bigrams vs PMI, which might be overly sensitive to rare bigrams.

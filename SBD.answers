@@ -1,0 +1,25 @@
+Jarvis Miller
+jarvm
+
+Three additional features:
+	1. r_word_start_t: Right word beginning with 't'. This is because my intuition says that many words beginning sentences are 'thus', 'the', 'therefore', etc.
+	2. l_word_prefix: left word contained in list of prefixes/titles
+	3. r_word_lt_4: Same intuition as left word being less than 3.
+
+Accuracy using all features: 0.992831541219
+confusion matrix: 
+      Pred   Pred
+True [[6280   31]
+True [  29 2030]]
+
+Accuracy using three brainstormed features: 0.838590203106
+confusion matrix: 
+[[6311    0]
+ [1351  708]]
+
+
+Accuracy using five core features: 0.992951015532
+confusion matrix: 
+ [[6281   30]
+ [  29 2030]]
+
